@@ -10,7 +10,3 @@ export interface AppState {
     // themes: ThemeState,
     theme: ThemeState,
 }
-
-// export interface InvoiceFeature {
-//     dataLoadingFeature: InvoiceState,
-// }

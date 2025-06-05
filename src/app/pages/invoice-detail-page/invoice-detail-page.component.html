@@ -1,9 +1,4 @@
 
-<!-- <button class="go-back_navigation" [routerLink]="'/'">
-    <!-- svg --
-    <img src="../../../assets/svgs/icon-arrow-left.svg" alt="left arrow svg on go back button">
-    <p>Go back</p>
-</button> -->
 <app-go-back />
 @if (data$ | async; as invoice) {
     <section class="page-controls">
@@ -15,14 +10,10 @@
             <app-status 
                 [status]="invoice.status"
             />
-            <!-- <div class="status">
-                <div class="ellipsis"></div>
-                <p>Pending</p>
-            </div> -->
     
         </div>
-        <!-- @if (data$ | async; as invoice) { -->
-            <!-- {{invoice.id}} -->
+        
+            <!-- operations section -->
             <div class="operations">
                 <!-- edit -->
                 <button class="edit" [routerLink]="'edit-form'" (click)="edit()">Edit</button>
@@ -33,7 +24,7 @@
                 <!-- mark as paid -->
                 <button class="mark-as-paid" (click)="markAsPaid()">Mark as Paid</button>
             </div>
-        <!-- } -->
+        
     </section>
 
 }
@@ -110,166 +101,5 @@
       </section>
     </section>
   }
-
-
-
-
-<!-- @for (invoice of data$ | async; ; track $index) { 
-    <section class="invoice-details">
-        <div>
-            <div>
-                <!-- id --
-                <p class="id">
-                    {{invoice.id}}
-                </p>
-                <!-- work-description --
-                <p class="work-description">
-                    {{invoice.description}}
-                </p>
-    
-            </div>
-        
-            <!-- seller-address --
-            <div class="sender-addres">
-                <!-- street name --
-                <p class="street-name">
-                    {{invoice.senderAddress.street}}
-                </p>
-                
-                <!-- city --
-                <p class="city">
-                    {{ invoice.senderAddress.city }}
-                </p>
-
-                <!-- post code --
-                <p class="post-code">
-                    {{ invoice.senderAddress.postCode }}
-                </p>
-
-                <!-- country --
-                <p class="country">
-                    {{ invoice.senderAddress.country}}
-                </p>
-            </div>
-    
-        </div>
-    
-        <div>
-            <div class="dates">
-                <!-- date invoice-date --
-                <div class="invoice-date">
-                    <p class="header">
-                        Invoice Date
-                    </p>
-                    <!-- date created --
-                    <p class="text">
-                        {{ invoice.createdAt | date }}
-                    </p>
-
-                </div>
-                
-                <!-- date payment-due-date --
-                <div class="payment-due-date">
-                    <p class="header">
-                        Payment Due
-                    </p>
-                    <!-- date payment --
-                    <p class="text">
-                        {{ invoice.paymentDue| date }}
-                    </p>
-                </div>
-
-                
-            </div>
-
-            <!-- recipient data --
-            <div class="recipient-data">
-                <!-- bill-to --
-                <p class="bill-to">
-                    Bill To
-                </p>
-            
-                <!-- name --
-                <p class="name">
-                    {{ invoice.clientName }}
-                </p>
-            
-                <!-- recipient-address --
-                <div class="sender-addres">
-                    <!-- street name --
-                    <p class="street-name">
-                        {{invoice.clientAddress.street}}
-                    </p>
-                    
-                    <!-- city --
-                    <p class="city">
-                        {{ invoice.clientAddress.city }}
-                    </p>
-    
-                    <!-- post code --
-                    <p class="post-code">
-                        {{ invoice.clientAddress.postCode }}
-                    </p>
-    
-                    <!-- country --
-                    <p class="country">
-                        {{ invoice.clientAddress.country}}
-                    </p>
-                </div>
-            </div>
-            
-            <div class="sender">
-            <!-- sent to --
-            <p class="sent-to">
-                Sent to
-            </p>
-
-            <!-- email-address --
-            <p class="email">
-                {{ invoice.clientEmail }}
-            </p>
-
-            </div>
-    
-        </div>
-
-        <!-- purchase prices --
-        <section class="purchase-prices">
-            @for (item of invoice.items; track $index) {
-                <div class="purchase">
-                    <!-- item details --
-                    <div class="item-detail">
-                        <!-- item name --
-                        <p class="item-name">
-                            {{ item.name }}
-                        </p>
-                        <!-- price calculation --
-                        <p class="price-calc">
-                            {{ item.quantity }} x {{ item.price | currency:'GBP':'symbol'  }}
-                        </p>
-                    </div>
-                    <div class="item-total">
-                        <p>
-                            {{ item.total }}
-                        </p>
-                    </div>
-                </div>
-
-            }
-
-            <!-- grand total --
-            <div class="grand-total">
-                <p>
-                    Grand Total
-                </p>
-                <p>
-                    {{ invoice.total }}
-                </p>
-            </div>
-        </section>
-      
-    </section>
-
-} -->
 
 

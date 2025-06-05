@@ -56,6 +56,7 @@
     margin-left: -1.5rem;
     box-shadow: 0px -10px 40px 4px #0003;
     padding: 0 1.5rem;
+    margin-right: 1.5rem;
 }
 .operations > button {
     font-size: var(--font-size-body);
@@ -64,22 +65,28 @@
     padding: 1rem 1.5rem;
     border-radius: 30px;
 }
-/* .operations > button:nth-child(2),
-.operations > button:nth-child(3) {
-    color: var(--color-white);
-    padding: 1rem 1.5rem;
-    border-radius: 30px;
-} */
 
 .edit {
     color: var(--color-light-blue-darker) !important;
     background-color: var(--color-white-shade-2);
 }
+
+.edit:hover {
+    background-color: #DFE3FA;
+}
 .delete {
     background-color: var(--color-red);
 }
+
+.delete:hover {
+    background-color: #FF9797;
+}
 .mark-as-paid {
     background-color: var(--color-purple);
+}
+
+.mark-as-paid:hover {
+    background-color: #9277FF;
 }
 
 .invoice-details {
@@ -152,10 +159,6 @@ app-status {
 .grand-total > p:last-child {
     font-size: var(--font-size-h2);
 }
-
-
-
-
 
 
 @media screen and (min-width: 920px) {

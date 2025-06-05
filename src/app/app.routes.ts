@@ -18,10 +18,6 @@ export const routes: Routes = [
                 path: 'new-form',
                 component: InvoiceFormComponent,
             },
-            // {
-            //     path: 'edit-form',
-            //     component: InvoiceFormComponent,
-            // },
         ]
     },
     {

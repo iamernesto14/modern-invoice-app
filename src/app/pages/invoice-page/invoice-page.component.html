@@ -31,9 +31,7 @@
             </section>
             
         }
-    
-        <!-- create a new invoice -->
-        <!-- <button class="new-invoice" [routerLink]=" " (click)="displayForm()"> -->
+        <!-- new invoice button -->
             <button class="new-invoice" [routerLink]="['./new-form']" (click)="displayForm()">
             <!-- svg -->
             <div class="svg-container">
@@ -71,29 +69,12 @@
                 <app-status 
                     [status]="invoice.status"
                 />
-                <!-- <div class="status-container">
-                    <div>
-                        <div class="ellipsis"></div>
-                        <p class="status">
-                            {{ invoice.status }}
-                        </p>
-                    </div>
-                </div> -->
+
+                <div class="right-arrow-container"><img class="right-arrow" src="assets/svgs/icon-arrow-right.svg" alt="right arrow svg icon"></div>
             </div>
 
         }
-        <!-- <div class="invoice">
-            <!-- id --
-            <p class="id"></p>
-            <!-- date --
-            <p class="date"></p>
-            <!-- name --
-            <p class="name"></p>
-            <!-- price --
-            <p class="price"></p>
-            <!-- status --
-            <p class="status"></p>
-        </div> -->
+        
     
     </main>
 
