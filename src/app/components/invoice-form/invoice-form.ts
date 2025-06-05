@@ -19,8 +19,8 @@ import { LoadDataInterface } from '../../interfaces/loadData.interface';
   selector: 'app-invoice-form',
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule, AsyncPipe, GoBack],
-  templateUrl: './invoice-form.component.html',
-  styleUrl: './invoice-form.component.css'
+  templateUrl: './invoice-form.html',
+  styleUrl: './invoice-form.css'
 })
 export class InvoiceForm implements OnInit{
 
@@ -68,20 +68,6 @@ export class InvoiceForm implements OnInit{
     })
 
     this.isNewForm = true;
-    // this.activatedRoute.paramMap.subscribe(val => console.log(val));
-
-    // this.activatedRoute.paramMap.subscribe(
-    //   val => {
-    //     const d = val.get('form');
-    //     console.log(d);
-    //   }
-    // )
-
-    // this.activatedRoute.params.subscribe(params => {
-    //   // Access the route parameters directly from the params object
-    //   const id = params;
-    //   console.log('Route parameter id:', id);
-    // });
 
         // Access route path segments
         const routeSnapshot = this.activatedRoute.snapshot;
@@ -217,9 +203,6 @@ export class InvoiceForm implements OnInit{
     }}));
     
   }
-  
-
-
   
 }
 
