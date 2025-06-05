@@ -1,0 +1,8 @@
+<!-- app banner -->
+<app-header />
+
+@if (isDeleteModalActive | async) {
+    <app-delete-modal />
+}
+
+<router-outlet class="hidden" />

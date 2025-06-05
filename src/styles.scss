@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    
+    /* colors */
+    --color-purple: #7c5dfa;
+    --color-purple-light: #9277ff;
+    --color-dark-blue: #1e2139;
+    --color-dark-blue-variant-1: #373B53;
+    --color-dark-blue-light: #252945;
+    --color-light-blue-lighter: #DFE3FA;
+    --color-light-blue: #888EB0; 
+    --color-light-blue-darker: #7E88C3; 
+    --color-black-shade: #0C0E16;
+    --color-dark-blue-dark: #141625;
+    --color-red-lighter: #9277FF;
+    --color-red: #EC5757;
+    --color-green: #33D69F;
+    --color-white: #FFF;
+    --color-white-shade: #F8F8FB; /*(Light BG) */
+    --color-white-shade-2: #F9FAFE;
+    --color-orange: #FF8F00;
+
+    --status-paid-bg: #33d6a024;
+    --status-pending-bg: #FF8F0024;
+    --status-draft-bg: #373B5324;
+    --font-size-h1: 32px;
+    --font-size-h2: 20px;
+    --font-size-h3: 16px;
+    --font-size-h3-small: 14px;
+    --font-size-body: 12px;
+    --font-size-body-smaller: 11px;
+
+}
+
+body {
+    width: 100%;
+    height: 100dvh;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--color-white-shade);
+
+    font-family: "League Spartan", sans-serif;
+}
+
+app-root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+app-invoice-page,
+app-invoice-detail-page {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+button {
+    cursor: pointer;
+    border-color: transparent;
+    background-color: transparent;
+}
+app-invoice-form, app-delete-modal { 
+    background: #000a;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+app-delete-modal {
+    position: absolute;
+    z-index: 10;
+}
+
+/* UTILITY CLASSES */
+.font-size-body {
+    font-size: var(--font-size-body);
+}
+.font-size-h3 {
+    font-size: var(--font-size-h3);
+}
+
+.hidden,
+.for-large-screens {
+    display: none;
+}
+
+
+
+
+@media screen and (min-width: 920px) {
+    app-root {
+        flex-direction: row;
+
+    }
+    app-invoice-page,
+    app-invoice-detail-page {
+    flex: none;
+    width: 70%;
+    margin: auto;
+    
+}
+    app-invoice-page {
+        overflow-y: scroll;
+        scrollbar-width: none;
+
+    }
+    .for-large-screens {
+        display: inline;
+
+    }
+}
