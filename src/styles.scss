@@ -1,7 +1,58 @@
+// styles.scss
 @use './styles/variables' as *;
-@use './styles/base' as *;
 
-// Root styles
+// Light theme (default)
+:root {
+  --bg-color: #{$color-white-shade};
+  --card-bg: #{$color-white};
+  --text-primary: #{$color-black-shade};
+  --text-secondary: #{$color-light-blue};
+  --button-bg: #{$color-purple};
+  --button-hover: #{$color-purple-light};
+  --border-color: #{$color-light-blue-lighter};
+  --status-paid-bg: #{$status-paid-bg};
+  --status-pending-bg: #{$status-pending-bg};
+  --status-draft-bg: #{$status-draft-bg};
+  --modal-bg: rgba(0, 0, 0, 0.66);
+  --accent: #{$color-purple};
+}
+
+// Dark theme
+.dark-mode {
+  --bg-color: #{$dark-bg};
+  --card-bg: #{$dark-card-bg};
+  --text-primary: #{$dark-text-primary};
+  --text-secondary: #{$dark-text-secondary};
+  --button-bg: #{$dark-button-bg};
+  --button-hover: #{$dark-button-hover};
+  --border-color: #{$dark-border};
+  --status-paid-bg: #{$dark-status-paid-bg};
+  --status-pending-bg: #{$dark-status-pending-bg};
+  --status-draft-bg: #{$dark-status-draft-bg};
+  --modal-bg: rgba(0, 0, 0, 0.8);
+  --accent: #{$dark-accent};
+}
+
+// Base styles
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, fill 0.3s ease;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg-color);
+  font-family: "League Spartan", sans-serif;
+}
+
+// Update existing styles to use CSS variables
 app-root {
   width: 100%;
   height: 100%;
@@ -20,7 +71,7 @@ app-invoice-detail-page {
 }
 
 app-invoice-detail-page {
-    position: relative;
+  position: relative;
 }
 
 .hidden {
@@ -35,7 +86,7 @@ button {
 
 app-invoice-form,
 app-delete-modal {
-  background: rgba(0, 0, 0, 0.66);
+  background: var(--modal-bg);
   height: 100%;
   display: flex;
   align-items: center;
@@ -62,17 +113,177 @@ app-delete-modal {
   display: none;
 }
 
+// Invoice page styles
+header,
+main {
+  width: min(900px, 100%);
+}
+
+header,
+.filter,
+.invoice-list-page-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.status,
+.name,
+.date,
+.hash {
+  color: var(--text-secondary);
+}
+
+.title,
+.id,
+.price,
+.filter {
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.filter {
+  gap: 1rem;
+}
+
+.invoice-list-page-controls {
+  gap: 1.5rem;
+}
+
+.filter-dropdown-menu {
+  position: absolute;
+  bottom: -96px;
+  right: 100px;
+  width: 120px;
+  background: var(--card-bg);
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  text-transform: capitalize;
+  font-size: $font-size-body;
+  box-shadow: 0 0 10px rgba(00, 0, 0, 0.1);
+  cursor: pointer;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  input[type="checkbox"],
+  label {
+    cursor: pointer;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.status {
+  margin-top: 4px;
+}
+
+.invoice {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 30px auto;
+  background: var(--card-bg);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 1rem 1.3rem;
+  gap: 5px 2rem;
+
+  &:hover {
+    border: 1px solid var(--accent);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .date {
+    grid-column: 1;
+  }
+
+  .name {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  .status-container,
+  .app-status {
+    grid-row: 2 / 4;
+    grid-column: 2;
+  }
+}
+
+.empty-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  article {
+    text-align: center;
+    width: 70%;
+    color: var(--text-primary);
+  }
+}
+
+.new-invoice {
+  border-color: transparent;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-start: 0.3rem;
+  padding-inline-end: 1rem;
+  height: 40px;
+  width: fit-content;
+  gap: 1rem;
+  background-color: var(--button-bg);
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--button-hover);
+  }
+
+  .svg-container {
+    width: 30px;
+    height: 30px;
+    background: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: transparent;
+    border-radius: 50%;
+  }
+
+  p {
+    color: $color-white;
+    font-weight: 600;
+  }
+}
+
+.right-arrow {
+  display: none;
+}
+
 // Media Queries
 @media screen and (min-width: 768px) {
   app-root {
     flex-direction: row;
     flex-direction: column;
-  }
-
-//   app-invoice-page,
-  app-invoice-detail-page {
-    flex: none;
-    margin: auto;
   }
 
   app-invoice-page {
@@ -84,11 +295,50 @@ app-delete-modal {
   .for-large-screens {
     display: inline;
   }
+
+  .invoice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > * {
+      height: 35px;
+    }
+
+    > p {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .status {
+    margin-top: 8px;
+  }
+
+  .status-arrow {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .right-arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right-arrow {
+    display: block;
+  }
+
+  .price {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 @media screen and (min-width: 920px) {
   app-invoice-detail-page {
     width: 70%;
+    margin: auto;
   }
-
 }

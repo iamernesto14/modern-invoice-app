@@ -1,3 +1,4 @@
+// header.component.scss
 @use '../../../styles/variables' as *;
 
 .banner-first {
@@ -6,7 +7,7 @@
   align-items: center;
   flex: 1;
   padding-right: 1.5rem;
-  border-right: 1px solid $color-light-blue-lighter;
+  border-right: 1px solid var(--border-color);
   height: 80px;
 }
 
@@ -18,7 +19,20 @@
   justify-content: center;
   align-items: center;
   border-radius: 0 20px 20px 0;
-  background-color: $color-purple;
+  background-color: var(--button-bg);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+
+  svg {
+    transition: fill 0.3s ease;
+  }
 }
 
 .user-profile {
@@ -42,7 +56,7 @@
   .banner-first {
     flex-direction: column;
     padding: 0;
-    border-bottom: 1px solid $color-light-blue-lighter;
+    border-bottom: 1px solid var(--border-color);
     border-right: none;
     width: 100%;
     padding-block-end: 2rem;

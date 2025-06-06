@@ -1,4 +1,6 @@
-// Variables
+// variables.scss
+
+// Light theme variables
 $color-purple: #7c5dfa;
 $color-purple-light: #9277ff;
 $color-dark-blue: #1e2139;
@@ -21,6 +23,20 @@ $status-paid-bg: rgba(51, 214, 160, 0.14);
 $status-pending-bg: rgba(255, 143, 0, 0.14);
 $status-draft-bg: rgba(55, 59, 83, 0.14);
 
+// Dark theme variables
+$dark-bg: #141625;
+$dark-card-bg: #1e2139;
+$dark-text-primary: #ffffff;
+$dark-text-secondary: #dfe3fa;
+$dark-accent: #9277ff;
+$dark-button-bg: #7c5dfa;
+$dark-button-hover: #9277ff;
+$dark-border: #252945;
+$dark-status-paid-bg: rgba(51, 214, 159, 0.1);
+$dark-status-pending-bg: rgba(255, 143, 0, 0.1);
+$dark-status-draft-bg: rgba(223, 227, 250, 0.06);
+
+// Font sizes
 $font-size-h1: 32px;
 $font-size-h2: 20px;
 $font-size-h3: 16px;
