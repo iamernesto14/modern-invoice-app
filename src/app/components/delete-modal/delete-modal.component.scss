@@ -1,42 +1,69 @@
-.container {
-    width: min(400px, 95%);
-    height: fit-content;
-    padding: 2rem;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    background-color: var(--color-white);
-}
-h2 {
-    color: var(--color-black-shade);
-    font-size: var(--font-size-h1);
-}
-p {
-    color: var(--color-light-blue);
-    font-size: var(--font-size-body);
+@use '../../../styles/variables' as *;
+@use '../../../styles/base' as *;
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+}
+
+.container {
+  width: min(400px, 95%);
+  height: fit-content;
+  padding: 2rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: $color-white;
+  position: absolute;
+  top: initial;
+  left: initial;
+  transform: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h2 {
+  color: $color-black-shade;
+  font-size: $font-size-h1;
+}
+
+p {
+  color: $color-light-blue;
+  font-size: $font-size-body;
 }
 
 .btns {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
-.delete, .cancel {
-    width: fit-content;
-    padding: 1rem 1.5rem;
-    border: 1px solid transparent;
-    border-radius: 24px;
 
-}
-.delete {
-    background-color: var(--color-red);
-    color: #fff;
-}
+.delete,
 .cancel {
-    color: var(--color-light-blue-darker);
-    background-color: var(--color-white-shade-2);
+  width: fit-content;
+  padding: 1rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 24px;
+}
+
+.delete {
+  background-color: $color-red;
+  color: $color-white;
+}
+
+.cancel {
+  color: $color-light-blue-darker;
+  background-color: $color-white-shade-2;
 }

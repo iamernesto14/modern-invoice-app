@@ -63,11 +63,14 @@
                     {{ invoice.total | currency: 'GBP' : 'symbol' : '1.2-2' }}
                 </p>
                 <!-- status -->
-                <app-status 
-                    [status]="invoice.status"
-                />
+                <div class="app-status status-arrow">
+                    <app-status 
+                    [status]="invoice.status"/>
 
-                <div class="right-arrow-container"><img class="right-arrow" src="assets/svgs/icon-arrow-right.svg" alt="right arrow svg icon"></div>
+                    <div class="right-arrow-container">
+                        <img class="right-arrow" src="assets/svgs/icon-arrow-right.svg" alt="right arrow svg icon">
+                    </div>
+                </div>
             </div>
 
         }

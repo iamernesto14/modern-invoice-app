@@ -72,14 +72,18 @@ main {
   gap: 1rem;
 }
 
+.status {
+    margin-top: 4px;
+  }
+
 .invoice {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 30px auto;
   background: $color-white;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 1rem 1.3rem;
   gap: 5px 2rem;
 
   &:hover {
@@ -99,17 +103,9 @@ main {
   }
 
   .status-container,
-  app-status {
+  .app-status {
     grid-row: 2 / 4;
     grid-column: 2;
-    // display: flex;
-    // align-items: center;
-    // justify-content: flex-end;
-  }
-
-  .status {
-    font-weight: 500;
-    margin-top: 0.5rem;
   }
 }
 
@@ -168,14 +164,13 @@ main {
 }
 
 // MEDIA QUERIES
-@media screen and (min-width: 920px) {
+@media screen and (min-width: 768px) {
   .invoice {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     > * {
-      flex: 1;
       height: 35px;
     }
 
@@ -183,6 +178,15 @@ main {
       display: flex;
       align-items: center;
     }
+  }
+
+  .status {
+    margin-top: 8px;
+  }
+
+  .status-arrow {
+    display: flex;
+    gap: 1.25rem;
   }
 
   .right-arrow-container {

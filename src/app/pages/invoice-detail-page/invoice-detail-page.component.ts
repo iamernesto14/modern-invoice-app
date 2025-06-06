@@ -7,7 +7,6 @@ import { Observable, tap } from 'rxjs';
 // import { InvoiceState } from '../../state/invoice/reducers/loadData.reducer';
 import { CommonModule } from '@angular/common';
 import { GoBackComponent } from '../../components/go-back/go-back.component';
-import { confirmDelete, deleteInvoice } from '../../state/invoice/actions/loadData.action';
 import { ApplicationService } from '../../services/application.service';
 import { StatusComponent } from "../../components/status/status.component";
 
@@ -31,16 +30,10 @@ export class InvoiceDetailPageComponent implements OnInit {
     private applicationService: ApplicationService,
   ) {};
 
-  ngOnInit(): void {
-    // console.log(this.store.select(selectInvoice));
-    // console.log(this.data$);
-    // this.store.select(selectInvoice).subscribe(val => console.log(val))
-  }
+  ngOnInit(): void {}
 
   edit () {
-    // this.data$.subscribe(val => console.log(val))
     console.log('..edit');
-    // this.router.navigate(['invoice/:id/edit-form']);
   }
   delete (id:string) {
     this.applicationService.displayDeleteModal(id);
