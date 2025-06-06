@@ -10,7 +10,7 @@
     <section class="invoice-list-page-controls">
         <button class="filter" (click)="displayDropDownMenu()" >
             <p>Filter</p>
-            <img src="../../../assets/svgs/icon-arrow-down.svg" alt="down arrow svg icon on filter dropdown">
+            <img src="/assets/svgs/icon-arrow-down.svg" alt="down arrow svg icon on filter dropdown">
         </button>
     
         <!-- filter dropdown -->
@@ -49,15 +49,12 @@
     <main>
         @for (invoice of data | async; track $index) {
             <div class="invoice font-size-body" [routerLink]=" 'invoice' " (click)="handleSelectedInvoice(invoice.id)">
-                <!-- id -->
                 <p class="id">
                     <span class="hash">#</span>{{ invoice.id }}
                 </p>
-                <!-- date -->
                 <p class="date">
                     <span>Due</span> {{ invoice.paymentDue | date: 'dd MMM yyyy'}}
                 </p>
-                <!-- name -->
                 <p class="name">
                     {{ invoice.clientName }}
                 </p>
