@@ -1,0 +1,71 @@
+
+.status-container,
+.status-container > div {
+    height: 100%;
+}
+.status-container {
+    grid-row: 2 / 4;
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.status-container > div {
+    height: 100%;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border: none;
+    border-radius: 6px;
+    /* width: 70%; */
+    width: 100px;
+    justify-content: center;
+
+}
+.ellipsis {
+    border: none;
+    border-radius: 50%;
+    width: 8px;
+    /* height: 20px; */
+    aspect-ratio: 1;
+    background: var(--color-green);;
+}
+.status {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+/* .status,
+.name,
+.date,
+.hash {
+    color: var(--color-light-blue);
+} */
+/* .paid,
+.draft,
+.pending {
+    opacity: 0.2;
+} */
+.paid {
+    background-color: var(--status-paid-bg);
+    color: var(--color-green);
+}
+.draft {
+    background-color: var(--status-draft-bg);
+    color: var(--color-dark-blue-variant-1);
+}
+.pending {
+    background-color: var(--status-pending-bg);
+    color: var(--color-orange);
+}
+
+.ellipsis-paid {
+    background-color: var(--color-green);
+}
+.ellipsis-pending {
+    background-color: var(--color-orange);
+    
+}
+.ellipsis-draft {
+    background-color: var(--color-dark-blue-variant-1);
+
+}

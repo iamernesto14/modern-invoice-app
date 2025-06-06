@@ -1,0 +1,21 @@
+<div class="status-container">
+    <div 
+        [ngClass]="{
+            'paid': status === 'paid',
+            'pending': status === 'pending',
+            'draft': status === 'draft'
+        }"
+    >
+    <div class="ellipsis"
+            [ngClass]="{
+                'ellipsis-paid': status === 'paid',
+                'ellipsis-pending': status === 'pending',
+                'ellipsis-draft': status === 'draft'
+            }"
+    
+    ></div>
+    <p class="status">
+            {{ status }}
+        </p>
+    </div>
+</div>

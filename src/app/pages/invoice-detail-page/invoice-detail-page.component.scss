@@ -1,0 +1,195 @@
+.go-back_navigation,
+.page-controls,
+.status-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.purchase, .grand-total {
+    padding: 1rem;
+}
+.bold-text, .id, .item-name, .item-total-price,
+.price-calc {
+    font-weight: bold; 
+}
+.id, .item-name, .item-total-price,
+.price-calc, .grand-total > p:first-child {
+    font-size: var(--font-size-body);
+}
+
+.street-name, .city, .post-code, .country,
+.header, .work-description {
+    font-size: var(--font-size-body-smaller);
+    color: var(--color-light-blue-darker);
+}
+
+.go-back_navigation {
+    width: fit-content;
+    gap: 10px;
+}
+
+.page-controls {
+    border: none;
+    border-radius: 8px;
+    height: 90px;
+    background: var(--color-white);
+}
+.status-container {
+    padding: 1rem;
+    width: 100%;
+    gap: 1rem;
+}
+.status-container > p:first-child {
+    color: var(--color-light-blue);
+}
+
+.operations {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background: white;
+    margin-left: -1.5rem;
+    box-shadow: 0px -10px 40px 4px #0003;
+    padding: 0 1.5rem;
+    margin-right: 1.5rem;
+}
+.operations > button {
+    font-size: var(--font-size-body);
+    height: 50px;
+    color: var(--color-white);
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+}
+
+.edit {
+    color: var(--color-light-blue-darker) !important;
+    background-color: var(--color-white-shade-2);
+}
+
+.edit:hover {
+    background-color: #DFE3FA;
+}
+.delete {
+    background-color: var(--color-red);
+}
+
+.delete:hover {
+    background-color: #FF9797;
+}
+.mark-as-paid {
+    background-color: var(--color-purple);
+}
+
+.mark-as-paid:hover {
+    background-color: #9277FF;
+}
+
+.invoice-details {
+    padding: 1.5rem;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    height: 400px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.sender-address {
+    margin-top: 1rem;
+}
+.basic-info {
+    width: 100%;
+    height: fit-content;
+}
+
+.basic-info > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
+    margin-top: 1.5rem;
+}
+.dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.purchase-prices {
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-white-shade-2);
+    /* overflow: hidden; */
+}
+.purchase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.price-calc {
+    margin-top: .5rem;
+    color: var(--color-light-blue-darker);
+}
+.grand-total {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--color-dark-blue-variant-1);
+    height: 80px;
+    color: var(--color-white);
+    align-items: center;
+    border-radius: 0 0 8px 8px;
+}
+app-status {
+    height: 40px;
+}
+
+
+
+.grand-total > p:last-child {
+    font-size: var(--font-size-h2);
+}
+
+
+@media screen and (min-width: 920px) {
+    .operations {
+        position: relative;
+        background-color: initial;
+        box-shadow: none;
+        margin-left: 0;
+        width: initial;
+        height: initial;
+        padding: initial;
+        gap: 1rem;
+    }
+    .invoice-details {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .status-container {
+        width: fit-content;
+    }
+    .basic-info > div:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
+    
+    .basic-info > div:nth-child(2) {
+        grid-template-columns: repeat(3, 1fr);
+        
+        
+    }
+}

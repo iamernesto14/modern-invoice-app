@@ -1,0 +1,11 @@
+
+<div class="container">
+    <h2>Confirm Delete</h2>
+    <p>
+        Are you sure you want to delete invoice #{{invoiceId}}? This action cannot be undone.
+    </p>
+    <div class="btns">
+        <button class="cancel" (click)="cancelDeletion()"> Cancel </button>
+        <button class="delete" (click)="confirmDeletion()"> Delete </button>
+    </div>
+</div>

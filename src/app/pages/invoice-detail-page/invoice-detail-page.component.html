@@ -1,0 +1,105 @@
+
+<app-go-back />
+@if (data$ | async; as invoice) {
+    <section class="page-controls">
+        <div class="status-container">
+            <!-- status -->
+            <p>Status</p>
+        
+            <!-- status -->
+            <app-status 
+                [status]="invoice.status"
+            />
+    
+        </div>
+        
+            <!-- operations section -->
+            <div class="operations">
+                <!-- edit -->
+                <button class="edit" [routerLink]="'edit-form'" (click)="edit()">Edit</button>
+        
+                <!-- delete -->
+                <button class="delete"  (click)="delete(invoice.id)">Delete</button>
+        
+                <!-- mark as paid -->
+                <button class="mark-as-paid" (click)="markAsPaid()">Mark as Paid</button>
+            </div>
+        
+    </section>
+
+}
+
+
+
+
+@if (data$ | async; as invoice) {
+    <section class="invoice-details">
+        <section class="basic-info">
+            <div>
+              <div>
+                <p class="id" #invoiceData>{{invoice.id}}</p>
+                <p class="work-description">{{invoice.description}}</p>
+              </div>
+            
+              <div class="sender-address">
+                <p class="street-name">{{invoice.senderAddress.street}}</p>
+                <p class="city">{{ invoice.senderAddress.city }}</p>
+                <p class="post-code">{{ invoice.senderAddress.postCode }}</p>
+                <p class="country">{{ invoice.senderAddress.country}}</p>
+              </div>
+            </div>
+        
+            <div>
+              <div class="dates">
+                <div class="invoice-date">
+                  <p class="header">Invoice Date</p>
+                  <p class="bold-text">{{ invoice.createdAt | date }}</p>
+                </div>
+                
+                <div class="payment-due-date">
+                  <p class="header">Payment Due</p>
+                  <p class="bold-text">{{ invoice.paymentDue | date }}</p>
+                </div>
+              </div>
+        
+              <div class="recipient-data">
+                <p class="bill-to header">Bill To</p>
+                <p class="bold-text name">{{ invoice.clientName }}</p>
+              
+                <div class="sender-address">
+                  <p class="street-name">{{invoice.clientAddress.street}}</p>
+                  <p class="city">{{ invoice.clientAddress.city }}</p>
+                  <p class="post-code">{{ invoice.clientAddress.postCode }}</p>
+                  <p class="country">{{ invoice.clientAddress.country}}</p>
+                </div>
+              </div>
+              
+              <div class="sender">
+                <p class="sent-to header">Sent to</p>
+                <p class="bold-text email">{{ invoice.clientEmail }}</p>
+              </div>
+            </div>
+        </section>
+  
+      <section class="purchase-prices">
+        @for (item of invoice.items; track $index) {
+          <div class="purchase">
+            <div class="item-detail">
+              <p class="item-name">{{ item.name }}</p>
+              <p class="price-calc">{{ item.quantity }} x {{ item.price | currency:'GBP':'symbol' }}</p>
+            </div>
+            <div class="item-total-price">
+              <p>{{ item.total | currency:'GBP':'symbol' }}</p>
+            </div>
+          </div>
+        }
+  
+        <div class="grand-total">
+          <p>Grand Total</p>
+          <p>{{ invoice.total | currency:'GBP':'symbol' }}</p>
+        </div>
+      </section>
+    </section>
+  }
+
+

@@ -1,0 +1,42 @@
+.container {
+    width: min(400px, 95%);
+    height: fit-content;
+    padding: 2rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--color-white);
+}
+h2 {
+    color: var(--color-black-shade);
+    font-size: var(--font-size-h1);
+}
+p {
+    color: var(--color-light-blue);
+    font-size: var(--font-size-body);
+
+}
+
+.btns {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+}
+.delete, .cancel {
+    width: fit-content;
+    padding: 1rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 24px;
+
+}
+.delete {
+    background-color: var(--color-red);
+    color: #fff;
+}
+.cancel {
+    color: var(--color-light-blue-darker);
+    background-color: var(--color-white-shade-2);
+}
