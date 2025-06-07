@@ -16,9 +16,12 @@ header,
 
 .status,
 .name,
-.date,
+.date {
+  color: var(--text-secondary);
+}
+
 .hash {
-  color: $color-light-blue;
+  color: $color-hash;
 }
 
 .title,
@@ -26,6 +29,7 @@ header,
 .price,
 .filter {
   font-weight: bold;
+  color: var(--text-primary);
 }
 
 .filter {
@@ -41,14 +45,14 @@ header,
   bottom: -96px;
   right: 100px;
   width: 120px;
-  background: $color-white;
+  background: var(--card-bg);
   padding: 1rem;
   border: none;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  color: $color-black-shade;
+  color: var(--text-primary);
   text-transform: capitalize;
   font-size: $font-size-body;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -66,6 +70,10 @@ header,
   }
 }
 
+.filter-text .for-tablet {
+  display: none;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -73,21 +81,21 @@ main {
 }
 
 .status {
-    margin-top: 4px;
-  }
+  margin-top: 4px;
+}
 
 .invoice {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 30px auto;
-  background: $color-white;
+  background: var(--card-bg);
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 1rem 1.3rem;
   gap: 5px 2rem;
 
   &:hover {
-    border: 1px solid $color-purple;
+    border: 1px solid var(--accent);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
   }
@@ -121,6 +129,7 @@ main {
   article {
     text-align: center;
     width: 70%;
+    color: var(--text-primary);
   }
 }
 
@@ -135,17 +144,17 @@ main {
   height: 40px;
   width: fit-content;
   gap: 1rem;
-  background-color: $color-purple;
+  background-color: var(--button-bg);
 
   &:hover {
     cursor: pointer;
-    background-color: $color-purple-light;
+    background-color: var(--button-hover);
   }
 
   .svg-container {
     width: 30px;
     height: 30px;
-    background: $color-white;
+    background-color: $color-white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,4 +212,8 @@ main {
     display: flex;
     justify-content: flex-end;
   }
+
+  .filter-text .for-tablet {
+    display: inline;
+}
 }

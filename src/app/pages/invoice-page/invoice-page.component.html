@@ -1,22 +1,21 @@
-<!-- header -->
 <header>
     <section class="page-title">
-        <h1 class="title">Invoice</h1>
+        <h1 class="title">Invoices</h1>
         <p class="status">
             <span class="for-large-screens">There are</span> {{ (data | async)?.length }} <span class="for-large-screens">total</span> invoices
         </p>
     </section>
 
     <section class="invoice-list-page-controls">
-        <button class="filter" (click)="displayDropDownMenu()" >
-            <p>Filter</p>
+        <button class="filter" (click)="displayDropDownMenu()">
+            <p class="filter-text">Filter<span class="for-tablet"> by status</span></p>
             <img src="/assets/svgs/icon-arrow-down.svg" alt="down arrow svg icon on filter dropdown">
         </button>
     
         <!-- filter dropdown -->
         @if (isEmpty) {
             <section class="filter-dropdown-menu" (click)="filterInvoiceData($event)" #InputParentContainer>
-                <div class="draft" >
+                <div class="draft">
                     <input type="checkbox" name="draft" id="draft-checkbox" #draftCheckBox>
                     <label for="draft-checkbox">draft</label>
                 </div>
@@ -29,23 +28,19 @@
                     <label for="paid-checkbox">paid</label>
                 </div>
             </section>
-            
         }
         <!-- new invoice button -->
-            <button class="new-invoice" [routerLink]="['./new-form']" (click)="displayForm()">
+        <button class="new-invoice" [routerLink]="['./new-form']" (click)="displayForm()">
             <!-- svg -->
             <div class="svg-container">
                 <svg width="11" height="11" xmlns="http://www.w3.org/2000/svg"><path d="M6.313 10.023v-3.71h3.71v-2.58h-3.71V.023h-2.58v3.71H.023v2.58h3.71v3.71z" fill="#7C5DFA" fill-rule="nonzero"/></svg>
             </div>
             <p>New <span class="hidden">Invoice</span></p>
         </button>
-
     </section>
-    
 </header>
 
 @if ( state | async ) {
-    <!-- content -->
     <main>
         @for (invoice of data | async; track $index) {
             <div class="invoice font-size-body" [routerLink]=" 'invoice' " (click)="handleSelectedInvoice(invoice.id)">
@@ -72,14 +67,9 @@
                     </div>
                 </div>
             </div>
-
         }
-        
-    
     </main>
-
-    
-}@else {
+} @else {
     <div class="empty-container">
         <!-- img -->
         <img src="../../../assets/svgs/illustration-empty.svg" alt="illustration depicting an empty invoice collection is empty">
@@ -93,7 +83,6 @@
             <p class="page-description">
                 Create an invoice by clicking the <strong>New</strong> button and get started
             </p>
-
         </article>
     </div>
 }

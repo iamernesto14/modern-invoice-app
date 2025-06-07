@@ -45,7 +45,7 @@
 
 .draft {
   background-color: $status-draft-bg;
-  color: $color-dark-blue-variant-1;
+  color: var(--text-primary);
 }
 
 .pending {
@@ -63,5 +63,5 @@
 }
 
 .ellipsis-draft {
-  background-color: $color-dark-blue-variant-1;
+  background-color: var(--text-primary);
 }

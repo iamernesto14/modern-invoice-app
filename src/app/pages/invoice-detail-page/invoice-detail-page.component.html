@@ -37,7 +37,7 @@
         <section class="basic-info">
             <div>
               <div>
-                <p class="id" #invoiceData>{{invoice.id}}</p>
+                <p class="id" #invoiceData><span class="hash">#</span>{{invoice.id}}</p>
                 <p class="work-description">{{invoice.description}}</p>
               </div>
             
@@ -64,7 +64,7 @@
         
               <div class="recipient-data">
                 <p class="bill-to header">Bill To</p>
-                <p class="bold-text name">{{ invoice.clientName }}</p>
+                <p class="bold-text">{{ invoice.clientName }}</p>
               
                 <div class="sender-address">
                   <p class="street-name">{{invoice.clientAddress.street}}</p>

@@ -15,6 +15,9 @@
   --status-draft-bg: #{$status-draft-bg};
   --modal-bg: rgba(0, 0, 0, 0.66);
   --accent: #{$color-purple};
+  --edit-bg: #{$color-white-shade-2};
+  --grand-total-bg: #{$color-dark-blue-variant-1};
+  --purchase-bg: #{$color-white-shade-2};
 }
 
 // Dark theme
@@ -31,6 +34,9 @@
   --status-draft-bg: #{$dark-status-draft-bg};
   --modal-bg: rgba(0, 0, 0, 0.8);
   --accent: #{$dark-accent};
+  --edit-bg: #{$dark-border};
+  --grand-total-bg: #{$dark-grand-bg};
+  --purchase-bg: #{$dark-border};
 }
 
 // Base styles
@@ -128,7 +134,6 @@ header,
   position: relative;
 }
 
-.status,
 .name,
 .date,
 .hash {
@@ -309,10 +314,6 @@ main {
       display: flex;
       align-items: center;
     }
-  }
-
-  .status {
-    margin-top: 8px;
   }
 
   .status-arrow {

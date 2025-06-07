@@ -56,7 +56,7 @@
   .banner-first {
     flex-direction: column;
     padding: 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid $status-draft-bg;
     border-right: none;
     width: 100%;
     padding-block-end: 2rem;

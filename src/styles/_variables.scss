@@ -18,10 +18,11 @@ $color-white: #FFF;
 $color-white-shade: #F8F8FB;
 $color-white-shade-2: #F9FAFE;
 $color-orange: #FF8F00;
+$color-hash: #888EB0;
 
 $status-paid-bg: rgba(51, 214, 160, 0.14);
 $status-pending-bg: rgba(255, 143, 0, 0.14);
-$status-draft-bg: rgba(55, 59, 83, 0.14);
+$status-draft-bg: rgba(151, 151, 151, 0.247);
 
 // Dark theme variables
 $dark-bg: #141625;
@@ -35,6 +36,7 @@ $dark-border: #252945;
 $dark-status-paid-bg: rgba(51, 214, 159, 0.1);
 $dark-status-pending-bg: rgba(255, 143, 0, 0.1);
 $dark-status-draft-bg: rgba(223, 227, 250, 0.06);
+$dark-grand-bg: #0C0E16; 
 
 // Font sizes
 $font-size-h1: 32px;
