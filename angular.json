@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngrx-invoice-app": {
+    "modern-invoice-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ngrx-invoice-app",
+            "outputPath": "dist/modern-invoice-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -56,19 +56,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "buildTarget": "ngrx-invoice-app:build:production"
-            },
-            "development": {
-              "buildTarget": "ngrx-invoice-app:build:development"
-            }
-          },
+  "production": {
+    "buildTarget": "modern-invoice-app:build:production"
+  },
+  "development": {
+    "buildTarget": "modern-invoice-app:build:development"
+  }
+},
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "ngrx-invoice-app:build"
+            "buildTarget": "modern-invoice-app:build"
           }
         },
         "test": {

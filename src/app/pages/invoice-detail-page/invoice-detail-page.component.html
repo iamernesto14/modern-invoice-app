@@ -37,7 +37,7 @@
         <section class="basic-info">
             <div>
               <div>
-                <p class="id" #invoiceData>{{invoice.id}}</p>
+                <p class="id" #invoiceData><span class="hash">#</span>{{invoice.id}}</p>
                 <p class="work-description">{{invoice.description}}</p>
               </div>
             
@@ -64,7 +64,7 @@
         
               <div class="recipient-data">
                 <p class="bill-to header">Bill To</p>
-                <p class="bold-text name">{{ invoice.clientName }}</p>
+                <p class="bold-text">{{ invoice.clientName }}</p>
               
                 <div class="sender-address">
                   <p class="street-name">{{invoice.clientAddress.street}}</p>
@@ -93,6 +93,27 @@
             </div>
           </div>
         }
+
+        <table class="items-table">
+          <thead class="header">
+            <tr>
+              <th>Item Name</th>
+              <th>QTY</th>
+              <th>Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of invoice.items; track $index) {
+              <tr>
+                <td class="bold-text">{{ item.name }}</td>
+                <td class="header">{{ item.quantity }}</td>
+                <td class="header">{{ item.price | currency: 'USD' : 'symbol' : '1.2-2' }}</td>
+                <td class="bold-text">{{ item.total | currency: 'USD' : 'symbol' : '1.2-2' }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
   
         <div class="grand-total">
           <p>Grand Total</p>

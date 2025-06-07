@@ -15,12 +15,3 @@ const initialState: FilterInvoiceState = {
     filteredData: [],
     filterCriteria: '',
 }
-
-// export const filterReducer = createReducer(
-//     initialState,
-//     // on(filterInvoiceByDraft, (state, { payload}) => ({...state})),
-//     on(filterInvoiceByDraft, (state, { filterCriteria}) => {
-//         console.log(filterCriteria);
-//         return ({...state, status: filterCriteria});
-//     }),
-// )

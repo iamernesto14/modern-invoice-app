@@ -1,133 +1,135 @@
+@use '../../../styles/variables' as *;
+
 .main-container {
-    width: min(700px, 100%);
-    height: 100%;
-    background-color: #fff;
-    border-color: transparent;
-    padding: 2rem 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    position: relative;
-    /* overflow: hidden; */
+  width: min(700px, 100%);
+  height: 100%;
+  background-color: $color-white;
+  border-color: transparent;
+  padding: 2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
 }
+
 header {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 2rem;
 }
 
 .title {
-    font-size: var(--font-size-h1);
-    color: var(--color-black-shade);
+  font-size: $font-size-h1;
+  color: $color-black-shade;
 }
+
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    gap: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
+
 .input-fields {
-    /* padding: 2rem; */
-    height: 600px;
-    height: 500px;
-    overflow-y: scroll;
-    scrollbar-width: none;
+  height: 500px;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
+
 fieldset {
-    border: none;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: auto;
-    gap: 1rem;
-    width: 90%;
-    margin: auto auto 3rem;
-}
-legend {
-    color: var(--color-purple);
-    font-size: var(--font-size-body);
-    margin-block-end: 1.5rem;
-}
-fieldset > div {
+  border: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 1rem;
+  width: 90%;
+  margin: auto auto 3rem;
+
+  > div {
     height: fit-content;
+  }
 }
+
+legend {
+  color: $color-purple;
+  font-size: $font-size-body;
+  margin-block-end: 1.5rem;
+}
+
 input,
-.paymentDue-container > select  {
-    height: 50px;
-    border-radius: 4px;
-    border: 1px solid var(--color-light-blue-lighter);
-    width: 100%;
-    padding: 0 1rem;
-    font-weight: bold;
+.paymentDue-container > select {
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid $color-light-blue-lighter;
+  width: 100%;
+  padding: 0 1rem;
+  font-weight: bold;
 }
+
 .street-address-container,
 .country-container,
 .client-name-container,
 .client-email-container,
 .invoice-terms > div,
 .item-name-container {
-    grid-column: 1 / -1;
-}
-label {
-    color: var(--color-light-blue-darker);
-    font-size: var(--font-size-body);
-    margin-block-end: .7rem;
-    display: block;
+  grid-column: 1 / -1;
 }
 
-/* fieldset input {
-    width: 100%;
-} */
+label {
+  color: $color-light-blue-darker;
+  font-size: $font-size-body;
+  margin-block-end: 0.7rem;
+  display: block;
+}
+
 .invoice-items {
-    grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
-/* .paymentDue-container > select {
-    width: 100%;
-    height: 50px;
-} */
+
 .add-new-item {
-    width: 100%;
-    height: 50px;
-    border: 1px solid transparent;
-    border-radius: 1.5rem;
-    font-weight: 600;
-    font-size: var(--font-size-body);
-    color: var(--color-light-blue-darker);
-    background: var(--color-white-shade-2);
-    display: block;
-    margin-top: 2rem;
+  width: 100%;
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  font-size: $font-size-body;
+  color: $color-light-blue-darker;
+  background: $color-white-shade-2;
+  display: block;
+  margin-top: 2rem;
 }
+
 .submission-btns {
-    /* position: absolute; */
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100px;
-    background: white;
-    box-shadow: 0px -10px 40px 4px #0003;
-    padding: 0 1.5rem;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background: $color-white;
+  box-shadow: 0px -10px 40px 4px #0003;
+  padding: 0 1.5rem;
 }
+
 h3,
-/* .item-container, */
 .add-new-item {
-    width: 90%;
-    margin-inline: auto;
+  width: 90%;
+  margin-inline: auto;
 }
 
 @media screen and (min-width: 580px) {
-    .main-container {
-        border-radius: 0 20px 20px 0;
-        align-self: flex-start;
-    }
+  .main-container {
+    border-radius: 0 20px 20px 0;
+    align-self: flex-start;
+  }
 }
 
 @media screen and (min-width: 920px) {
-    .main-container {
-        padding-left: 6rem;
-    }
-    header {
-        padding: 0 1.8rem;
-    }
+  .main-container {
+    padding-left: 6rem;
+  }
+
+  header {
+    padding: 0 1.8rem;
+  }
 }

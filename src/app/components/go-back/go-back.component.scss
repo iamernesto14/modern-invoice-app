@@ -1,8 +1,14 @@
-
+@use '../../../styles/variables' as *;
 .go-back_navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: fit-content;
     gap: 10px;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.go-back_navigation:hover {
+    color: $color-light-blue-darker;
 }

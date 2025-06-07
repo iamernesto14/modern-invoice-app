@@ -33,7 +33,6 @@ export class ApplicationService {
 
    removeDeleteModal () {
     this.toggleModal(false);
-    // this.isDeleteModalActive = false;
   }
   
 
