@@ -8,7 +8,6 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { LoadDataEffect } from './state/invoice/effects/load-data.effect';
 import { loadDataReducer } from './state/invoice/reducers/loadData.reducer';
-import { themeReducer } from './state/theme/reducer/theme.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,11 +24,6 @@ export const appConfig: ApplicationConfig = {
       name: 'invoice', reducer: loadDataReducer
     },
     
-  ),
-  provideState(
-    {
-      name: 'theme', reducer: themeReducer
-    },
   ),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],

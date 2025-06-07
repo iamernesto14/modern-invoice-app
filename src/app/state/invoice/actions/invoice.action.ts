@@ -24,22 +24,5 @@ export const InvoiceAction = createActionGroup({
         'Get Invoice': props<{id: string}>(),
         'Update Invoice': props<{update: {id: string; changes: Partial<Invoice>}}>(),
         'Delete Invoice': props<{id: string}>(),
-        // 'Update Invoice': props<Invoice>(),
-        // 'Update Book': props<{ update: { id: string; changes: Partial<Book> } }>(),
     }
 })
-
-
-
-// const FILTER = '[Filter] filtering invoice data'
-// export const filterInvoice = createAction(
-//     FILTER,
-//     props<{filterCriteria: FilterCriteriaType}>(),
-// )
-
-// // selected invoice
-// const SELECTED_INVOICE = '[Selected invoice] routes to the selected invoice';
-// export const detailedInvoice = createAction(
-//     SELECTED_INVOICE,
-//     props<{selectedInvoiceId: string}>(),
-// )
