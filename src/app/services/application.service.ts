@@ -34,6 +34,4 @@ export class ApplicationService {
    removeDeleteModal () {
     this.toggleModal(false);
   }
-  
-
 }
