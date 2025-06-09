@@ -167,7 +167,7 @@ input[type=number] {
   }
 
   .save-draft {
-    background-color: var(--purchase-bg);
+    background-color: $dark-draft-btn;
     padding: 1rem 1rem;
     color: var(--text-secondary);
     border-radius: 30px;
