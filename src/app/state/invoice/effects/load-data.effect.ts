@@ -26,7 +26,6 @@ export class LoadDataEffect {
       editInvoice$ = createEffect(() => (
         this.actions$.pipe(
           ofType(editInvoiceForm),
-          
         )
       ))
 

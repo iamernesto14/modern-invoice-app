@@ -18,25 +18,6 @@ import {
   FilterCriteriaType,
 } from '../actions/loadData.action';
 
-// export interface InvoiceState {
-//   data: LoadDataInterface[];
-//   filteredData: LoadDataInterface[];
-//   filterCriteria: FilterCriteriaType;
-//   selectedInvoiceId: string;
-//   // filterCriteria: string;
-//   loading: boolean;
-//   error: string;
-// }
-
-// const initialState:InvoiceState = {
-//   data: [],
-//   filteredData: [],
-//   filterCriteria: {paid: false, pending: false, draft: false},
-//   selectedInvoiceId: '',
-//   loading: false,
-//   error: '',
-// };
-
 // defining or extending the entity state
 export interface InvoiceState extends EntityState<LoadDataInterface> {
   filterCriteria: FilterCriteriaType;

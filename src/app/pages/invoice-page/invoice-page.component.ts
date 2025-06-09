@@ -57,9 +57,7 @@ export class InvoicePageComponent implements OnInit {
   }
 
   displayForm ():void {
-    // this.isFormActive = !this.isFormActive;
     this.isFormActive = true;
-    // console.log(this.isFormActive);
   }
   
 }
